@@ -31,7 +31,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/products")
+      .get("ecommerce-fullstack-project-production-7599.up.railway.app/api/products")
       .then((response) => {
         setProducts(response.data);
       })

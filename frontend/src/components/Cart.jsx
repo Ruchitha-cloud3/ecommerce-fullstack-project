@@ -34,7 +34,7 @@ function Cart() {
     setAddress(savedProfile.address || "");
 
     axios
-      .get(`http://localhost:5000/api/cart/${user.id}`)
+      .get(`ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}`)
       .then((response) => {
         const items = response.data.map((item) => ({
           ...item,
@@ -81,7 +81,7 @@ function Cart() {
   // COD does not need online payment
   if (paymentMethod === "Cash on Delivery") {
     axios
-      .post("http://localhost:5000/api/orders", {
+      .post("ecommerce-fullstack-project-production-7599.up.railway.app/api/orders", {
         user_id: user.id,
         total_amount: totalPrice,
         shipping_address: address,
@@ -110,7 +110,7 @@ function Cart() {
   // Online payment: Create Razorpay order
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/payment/create-order",
+      "ecommerce-fullstack-project-production-7599.up.railway.app/api/payment/create-order",
       {
         amount: totalPrice,
       }
@@ -127,7 +127,7 @@ function Cart() {
       handler: async function (paymentResponse) {
   try {
     const verifyResponse = await axios.post(
-      "http://localhost:5000/api/payment/verify",
+      "ecommerce-fullstack-project-production-7599.up.railway.app/api/payment/verify",
       {
         razorpay_order_id: paymentResponse.razorpay_order_id,
         razorpay_payment_id: paymentResponse.razorpay_payment_id,

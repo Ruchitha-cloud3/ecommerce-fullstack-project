@@ -18,7 +18,7 @@ function Profile() {
     if (!user) return;
 
     axios
-      .get(`http://localhost:5000/api/profile/${user.id}`)
+      .get(`ecommerce-fullstack-project-production-7599.up.railway.app/api/profile/${user.id}`)
       .then((response) => {
         setProfile({
           name: response.data.name || "",
@@ -47,7 +47,7 @@ function Profile() {
 
     axios
       .put(
-        `http://localhost:5000/api/profile/${user.id}`,
+        `ecommerce-fullstack-project-production-7599.up.railway.app/api/profile/${user.id}`,
         profile
       )
       .then(() => {

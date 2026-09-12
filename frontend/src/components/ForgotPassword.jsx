@@ -11,7 +11,7 @@ function ForgotPassword() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/forgot-password",
+        "ecommerce-fullstack-project-production-7599.up.railway.app/api/auth/forgot-password",
         {
           email
         }

@@ -28,7 +28,7 @@ function ResetPassword() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/reset-password",
+        "ecommerce-fullstack-project-production-7599.up.railway.app/api/auth/reset-password",
         {
           resetToken,
           newPassword

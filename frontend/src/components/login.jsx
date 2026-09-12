@@ -9,7 +9,7 @@ function Login() {
        e.preventDefault();
        try {
         const response = await axios.post(
-            "http://localhost:5000/api/auth/login",
+            "ecommerce-fullstack-project-production-7599.up.railway.app/api/auth/login",
             {
                 email,
                 password

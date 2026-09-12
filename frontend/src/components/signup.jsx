@@ -10,7 +10,7 @@ function Signup() {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/auth/register",
+                "ecommerce-fullstack-project-production-7599.up.railway.app/api/auth/register",
                 {
                     name,
                     email,
