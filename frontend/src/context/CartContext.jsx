@@ -111,7 +111,7 @@ function CartProvider({ children }) {
     }
 
     axios
-      .put(`ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}/${productId}`, {
+      .put(`https://ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}/${productId}`, {
         quantity: newQuantity
       })
       .then(() => {
