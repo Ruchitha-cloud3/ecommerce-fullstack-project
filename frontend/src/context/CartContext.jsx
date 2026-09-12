@@ -104,6 +104,7 @@ function CartProvider({ children }) {
     if (!product) return;
 
     const newQuantity = Number(product.quantity) - 1;
+    console.log("Decrease clicked:",productId,product.quntity,newQuantity);
 
     if (newQuantity <= 0) {
       removeFromCart(productId);
@@ -115,6 +116,7 @@ function CartProvider({ children }) {
         quantity: newQuantity
       })
       .then(() => {
+        console.log("Decrease API success:",newQuantity);
         setCartItems((prevItems) =>
           prevItems.map((item) =>
             item.id === productId
