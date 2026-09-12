@@ -7,7 +7,7 @@ function Categories() {
 
   useEffect(() => {
     axios
-      .get("ecommerce-fullstack-project-production-7599.up.railway.app/api/products")
+      .get("https://ecommerce-fullstack-project-production-7599.up.railway.app/api/products")
       .then((response) => {
         setProducts(response.data);
       })
