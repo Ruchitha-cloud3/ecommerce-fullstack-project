@@ -11,7 +11,7 @@ function CartProvider({ children }) {
     const user = JSON.parse(localStorage.getItem("user"));
     console.log("Product added:", product);
     axios
-      .post("ecommerce-fullstack-project-production-7599.up.railway.app/api/cart", {
+      .post("https://ecommerce-fullstack-project-production-7599.up.railway.app/api/cart", {
         user_id: user.id,
         product_id: product.id,
         quantity: 1
@@ -51,7 +51,7 @@ function CartProvider({ children }) {
   const removeFromCart = (productId) => {
     const user = JSON.parse(localStorage.getItem("user"));
     axios
-      .delete(`ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}/${productId}`)
+      .delete(`https://ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}/${productId}`)
       .then(() => {
         setCartItems((prevItems) =>
           prevItems.filter((item) => item.id !== productId)
@@ -74,7 +74,7 @@ function CartProvider({ children }) {
     const newQuantity = Number(product.quantity) + 1;
 
     axios
-      .put(`ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}/${productId}`, {
+      .put(`https://ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}/${productId}`, {
         quantity: newQuantity
       })
       .then(() => {
