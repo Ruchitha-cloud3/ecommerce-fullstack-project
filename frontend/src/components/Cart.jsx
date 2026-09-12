@@ -34,7 +34,7 @@ function Cart() {
     setAddress(savedProfile.address || "");
 
     axios
-      .get(`ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}`)
+      .get(`https://ecommerce-fullstack-project-production-7599.up.railway.app/api/cart/${user.id}`)
       .then((response) => {
         const items = response.data.map((item) => ({
           ...item,
