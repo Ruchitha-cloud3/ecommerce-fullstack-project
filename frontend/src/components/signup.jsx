@@ -10,7 +10,7 @@ function Signup() {
         e.preventDefault();
         try {
             const response = await axios.post(
-                "ecommerce-fullstack-project-production-7599.up.railway.app/api/auth/register",
+               "https://ecommerce-fullstack-project-production-7599.up.railway.app/api/auth/register",
                 {
                     name,
                     email,
