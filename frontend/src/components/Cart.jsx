@@ -81,7 +81,7 @@ function Cart() {
   // COD does not need online payment
   if (paymentMethod === "Cash on Delivery") {
     axios
-      .post("ecommerce-fullstack-project-production-7599.up.railway.app/api/orders", {
+      .post("https://ecommerce-fullstack-project-production-7599.up.railway.app/api/orders", {
         user_id: user.id,
         total_amount: totalPrice,
         shipping_address: address,
@@ -110,7 +110,7 @@ function Cart() {
   // Online payment: Create Razorpay order
   try {
     const response = await axios.post(
-      "ecommerce-fullstack-project-production-7599.up.railway.app/api/payment/create-order",
+      "https://ecommerce-fullstack-project-production-7599.up.railway.app/api/payment/create-order",
       {
         amount: totalPrice,
       }
@@ -127,7 +127,7 @@ function Cart() {
       handler: async function (paymentResponse) {
   try {
     const verifyResponse = await axios.post(
-      "ecommerce-fullstack-project-production-7599.up.railway.app/api/payment/verify",
+      "https://ecommerce-fullstack-project-production-7599.up.railway.app/api/payment/verify",
       {
         razorpay_order_id: paymentResponse.razorpay_order_id,
         razorpay_payment_id: paymentResponse.razorpay_payment_id,
