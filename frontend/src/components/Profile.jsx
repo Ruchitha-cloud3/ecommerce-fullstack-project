@@ -59,6 +59,10 @@ function Profile() {
             email: profile.email,
           })
         );
+        localStorage.setItem(
+          "profile",
+          JSON.stringify(profile)
+        );
 
         setEditing(false);
         alert("Profile updated successfully");
