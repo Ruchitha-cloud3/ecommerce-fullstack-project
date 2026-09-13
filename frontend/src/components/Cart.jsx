@@ -184,8 +184,12 @@ function Cart() {
     razorpay.open();
 
     razorpay.on("payment.failed", function (response) {
-      console.log("Payment failed:", response.error);
-      alert("Payment failed. Please try again.");
+      console.log("PAMENT FAILED:", response.error);
+      alert(
+        response.error.code + "\n" + 
+        response.error.description + "\n" +
+        response.error.reason
+      );
       setIsPlacingOrder(false);
     });
   } catch (error) {
