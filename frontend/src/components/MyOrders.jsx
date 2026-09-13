@@ -8,7 +8,7 @@ function MyOrders() {
 
   axios
     .put(
-      `ecommerce-fullstack-project-production-7599.up.railway.app/api/orders/${user.id}/${orderId}/cancel`
+      `https://ecommerce-fullstack-project-production-7599.up.railway.app/api/orders/${user.id}/${orderId}/cancel`
     )
     .then(() => {
       setOrders((prevOrders) =>
@@ -29,7 +29,7 @@ function MyOrders() {
 
   useEffect(() => {
     axios
-      .get(`ecommerce-fullstack-project-production-7599.up.railway.app/api/orders/${user.id}`)
+      .get(`https://ecommerce-fullstack-project-production-7599.up.railway.app/api/orders/${user.id}`)
       .then((response) => {
         setOrders(response.data);
       })
